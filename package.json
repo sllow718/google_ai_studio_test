@@ -20,6 +20,8 @@
   "homepage": "https://github.com/sllow718/google_ai_studio_test#readme",
   "dependencies": {
     "@google/genai": "^1.50.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
 }
