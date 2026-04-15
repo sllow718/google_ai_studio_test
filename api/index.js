@@ -1,3 +1,6 @@
+require('dotenv').config({ path: '../.env.local' });
+
+
 // api/index.js
 const express = require('express');
 const cors = require('cors');

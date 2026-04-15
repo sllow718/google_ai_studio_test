@@ -1,6 +1,6 @@
 const { GoogleGenAI } = require("@google/genai");
 const botConfig = require('../config/system_prompt');
-
+console.log("🔑 Gemini API Key Loaded:", !!process.env.GEMINI_API_KEY);
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const generateResponse = async (userMessage) => {

@@ -15,7 +15,7 @@ async function runTest() {
         return;
     }
 
-    const testMessage = "test local";
+    const testMessage = "test local 15 april 26";
     
     try {
         console.log("📡 Step 1: Requesting response from Gemma...");

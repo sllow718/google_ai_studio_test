@@ -1,5 +1,5 @@
 // utils/googleSheetsLogger.js
-const logToSheet = async (userMessage, aiResponse, status = 'Success') => {
+const logToSheet = async (userMessage, aiResponse, status = 'Success', sessionId) => {
     try {
         const WEB_APP_URL = process.env.GOOGLE_SCRIPT_URL;
 
@@ -8,6 +8,7 @@ const logToSheet = async (userMessage, aiResponse, status = 'Success') => {
             redirect: 'follow', // CRITICAL: Tell Node to follow Google's redirect
             headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // Use text/plain to avoid CORS pre-flight
             body: JSON.stringify({
+                sessionId: sessionId, // Pass sessionId for better tracking
                 message: userMessage,
                 response: aiResponse,
                 status: status

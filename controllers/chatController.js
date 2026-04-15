@@ -10,11 +10,11 @@ const handleChatRequest = async (req, res) => {
         }
 
         const aiResponse = await geminiModel.generateResponse(message);
-        await logToSheet(message, aiResponse, 'Success');
+        await logToSheet(message, aiResponse, 'Success', sessionId);
         res.json({ response: aiResponse });
     } catch (error) {
         console.error("Controller Error:", error.message);
-        await logToSheet(message, error.message, 'Error');
+        await logToSheet(message, error.message, 'Error', sessionId);
         res.status(500).json({ error: "Failed to process chat." });
     }
 };
