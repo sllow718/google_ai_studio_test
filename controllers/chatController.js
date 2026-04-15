@@ -14,7 +14,7 @@ const handleChatRequest = async (req, res) => {
         res.json({ response: aiResponse });
     } catch (error) {
         console.error("Controller Error:", error.message);
-        await logToSheet(message, error.message, 'Error', sessionId);
+        await logToSheet(sessionId, message, error.message, 'Error');
         res.status(500).json({ error: "Failed to process chat." });
     }
 };
